@@ -1,0 +1,458 @@
+/* ---------- Global ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInBody 1s ease-in-out;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* ---------- Responsive Login Container ---------- */
+.login-container {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 40px auto;
+    animation: fadeInCard 0.8s ease-in-out;
+}
+
+/* ---------- Login Form Styling ---------- */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container form h2 {
+    color: #333366;
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.login-container input:focus {
+    border-color: #6e8efb;
+    outline: none;
+    box-shadow: 0 0 6px #6e8efb80;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.login-container button:hover {
+    background: linear-gradient(to right, #5a7dfb, #9c66e1);
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container input,
+    .login-container button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* ---------- Signup Container ---------- */
+.signup-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    animation: fadeInCard 0.8s ease-in-out;
+}
+
+/* ---------- Signup Form Styling ---------- */
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-container h2 {
+    color: #333366;
+    margin-bottom: 20px;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.signup-container input:focus {
+    border-color: #6e8efb;
+    outline: none;
+    box-shadow: 0 0 6px #6e8efb80;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.signup-container button:hover {
+    background: linear-gradient(to right, #5a7dfb, #9c66e1);
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media screen and (max-width: 480px) {
+    .signup-container {
+        padding: 30px 20px;
+    }
+
+    .signup-container h2 {
+        font-size: 20px;
+    }
+
+    .signup-container input,
+    .signup-container button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* ---------- Global Styles ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 480px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeInCard 1s ease-in-out;
+}
+
+@keyframes fadeInCard {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Headings ---------- */
+h2, h3 {
+    text-align: center;
+    color: #333366;
+    margin-bottom: 20px;
+}
+
+/* ---------- Form Input Fields ---------- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+    border-color: #6e8efb;
+    outline: none;
+    box-shadow: 0 0 6px #6e8efb80;
+}
+
+/* ---------- Select Dropdown Styling ---------- */
+select {
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20fill%3D'%236e8efb'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%20width%3D'24'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M7%2010l5%205%205-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+/* ---------- Buttons ---------- */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #5a7dfb, #9c66e1);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ---------- Sections ---------- */
+.section {
+    margin-top: 25px;
+}
+
+/* ---------- Results Styling ---------- */
+.result {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.score {
+    font-size: 22px;
+    color: #003366;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.rank {
+    font-size: 20px;
+    color: #006600;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* ---------- Links & Footer ---------- */
+.logout {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.logout a {
+    color: #333366;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logout a:hover {
+    color: #6e8efb;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* ---------- Card Container ---------- */
+.container {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 480px;
+    padding: 40px 30px 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeInCard 1s ease-in-out;
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Headings ---------- */
+h2, h3 {
+    text-align: center;
+    color: #333366;
+    margin-bottom: 20px;
+}
+
+/* ---------- Form Inputs ---------- */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #6e8efb;
+    outline: none;
+    box-shadow: 0 0 6px #6e8efb80;
+}
+
+/* ---------- Buttons ---------- */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #5a7dfb, #9c66e1);
+}
+
+/* ---------- Sections ---------- */
+.section {
+    margin-top: 25px;
+}
+
+/* ---------- Result Cards ---------- */
+.result {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeInCard 0.8s ease-in-out;
+}
+
+.score {
+    font-size: 22px;
+    color: #003366;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.rank {
+    font-size: 20px;
+    color: #006600;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* ---------- Links and Footer ---------- */
+.logout {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.logout a {
+    color: #333366;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logout a:hover {
+    color: #6e8efb;
+}
+
+a.button-link {
+    text-decoration: none;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+select:focus {
+    border-color: #6e8efb;
+    outline: none;
+    box-shadow: 0 0 6px #6e8efb80;
+}
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    appearance: none;
+}
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #6e8efb;
+    box-shadow: 0 0 6px #6e8efb80;
+}

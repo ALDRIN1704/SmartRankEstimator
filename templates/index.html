@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NIRF Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🎓 NIRF Score & Rank Predictor</h2>
+
+        <!-- Score Prediction Form -->
+        <div class="section">
+            <form method="POST">
+                <input type="hidden" name="action" value="predict_score">
+                <input type="text" name="college_name" placeholder="Enter College Name" required><br>
+                <input type="text" name="predict_year" placeholder="Enter Year to Predict" required><br>
+                <button type="submit">🔍 Predict Score</button>
+            </form>
+        </div>
+
+        <!-- Predicted Score Display -->
+        {% if predicted_score %}
+            <div class="section result">
+                <h3>✅ Predicted Score</h3>
+                <p><strong>{{ college }}</strong> ({{ predict_year }})</p>
+                <p class="score">{{ predicted_score | round(2) }}</p>
+            </div>
+        {% endif %}
+
+        <!-- Rank Prediction Form -->
+        {% if show_rank_input %}
+            <div class="section">
+                <form method="POST">
+                    <input type="hidden" name="action" value="predict_rank">
+                    <input type="text" name="entered_score" placeholder="Enter Score to Estimate Rank" required><br>
+                    <button type="submit">🎯 Estimate Rank</button>
+                </form>
+            </div>
+        {% endif %}
+
+        <!-- Estimated Rank Display -->
+        {% if estimated_rank %}
+            <div class="section result">
+                <h3>🏆 Estimated Rank</h3>
+                <p>For Score: <strong>{{ entered_score }}</strong></p>
+                <p class="rank">Rank: <strong>{{ estimated_rank }}</strong></p>
+            </div>
+        {% endif %}
+
+        <div class="logout">
+            <a href="/logout">🔙 Logout</a>
+        </div>
+    </div>
+</body>
+</html>

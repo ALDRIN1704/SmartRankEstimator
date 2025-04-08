@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NIRF Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🎓 NIRF Score & Rank Predictor</h2>
+
+        <!-- Step 1: Predict NIRF Score -->
+        <div class="section">
+            <form method="POST">
+                <input type="hidden" name="action" value="predict_score">
+
+                <!-- College Dropdown -->
+                <select name="college_name" required>
+                    <option value="">Select a College</option>
+                    {% for name in college_list %}
+                        <option value="{{ name }}" {% if college == name %}selected{% endif %}>{{ name }}</option>
+                    {% endfor %}
+                </select><br>
+
+                <input type="text" name="predict_year" placeholder="Enter Year to Predict (e.g. 2025)" required><br>
+                <button type="submit">🔍 Predict Score</button>
+            </form>
+        </div>
+
+        <!-- Show Predicted Score -->
+        {% if predicted_score %}
+            <div class="section result">
+                <h3>✅ Predicted Score</h3>
+                <p><strong>{{ college }}</strong> ({{ predict_year }})</p>
+                <p class="score">{{ predicted_score | float | round(2) }}</p>
+            </div>
+        {% endif %}
+
+        <!-- Step 2: Enter Score for Rank Estimation -->
+        {% if show_rank_input %}
+            <div class="section">
+                <form method="POST">
+                    <input type="hidden" name="action" value="predict_rank">
+                    <input type="hidden" name="college_name" value="{{ college }}">
+                    <input type="hidden" name="predict_year" value="{{ predict_year }}">
+                    <input type="hidden" name="predicted_score" value="{{ predicted_score }}">
+                    <input type="text" name="entered_score" placeholder="Enter Any Score to Estimate Rank" required><br>
+                    <button type="submit">🎯 Estimate Rank</button>
+                </form>
+            </div>
+        {% endif %}
+
+        <!-- Show Estimated Rank -->
+        {% if estimated_rank %}
+            <div class="section result">
+                <h3>🏆 Estimated Rank</h3>
+                <p>For Score: <strong>{{ entered_score }}</strong></p>
+                <p class="rank">Rank: <strong>{{ estimated_rank }}</strong></p>
+            </div>
+        {% endif %}
+
+        <div class="logout">
+            <a href="/">🔙 Back to Home</a> |
+            <a href="/logout">🚪 Logout</a>
+        </div>
+    </div>
+</body>
+</html>
